@@ -46,7 +46,6 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(items.count)
         return items.count
     }
     
