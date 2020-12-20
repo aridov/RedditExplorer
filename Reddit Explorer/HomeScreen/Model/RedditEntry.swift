@@ -20,7 +20,7 @@ struct ChildrenData: Codable {
 }
 
 struct RedditEntry: Codable {
-    let author_fullname: String
+    let author: String
     let title: String
     let thumbnail: String
     let num_comments: Int
