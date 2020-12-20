@@ -13,6 +13,8 @@
 		3CFCD286258ED43900D90AC3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD285258ED43900D90AC3 /* Launch Screen.storyboard */; };
 		3CFCD295258EDEDB00D90AC3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD293258EDEDB00D90AC3 /* HomeController.swift */; };
 		3CFCD296258EDEDB00D90AC3 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD294258EDEDB00D90AC3 /* HomeController.xib */; };
+		3CFCD29A258EE10500D90AC3 /* RedditEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD299258EE10500D90AC3 /* RedditEntry.swift */; };
+		3CFCD29F258EF01000D90AC3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD29E258EF01000D90AC3 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3CFCD285258ED43900D90AC3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3CFCD293258EDEDB00D90AC3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3CFCD294258EDEDB00D90AC3 /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		3CFCD299258EE10500D90AC3 /* RedditEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditEntry.swift; sourceTree = "<group>"; };
+		3CFCD29E258EF01000D90AC3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 				3CFCD288258ED44E00D90AC3 /* App */,
 				3CFCD284258ED42500D90AC3 /* LaunchScreen */,
 				3CFCD28A258EDA0100D90AC3 /* HomeScreen */,
+				3CFCD29D258EEFB700D90AC3 /* NetworkService */,
 				3CFCD277258ED37600D90AC3 /* Assets.xcassets */,
 				3CFCD27C258ED37600D90AC3 /* Info.plist */,
 			);
@@ -85,10 +90,27 @@
 		3CFCD28A258EDA0100D90AC3 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				3CFCD298258EE0EF00D90AC3 /* Model */,
 				3CFCD293258EDEDB00D90AC3 /* HomeController.swift */,
 				3CFCD294258EDEDB00D90AC3 /* HomeController.xib */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		3CFCD298258EE0EF00D90AC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCD299258EE10500D90AC3 /* RedditEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CFCD29D258EEFB700D90AC3 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCD29E258EF01000D90AC3 /* NetworkService.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFCD29F258EF01000D90AC3 /* NetworkService.swift in Sources */,
 				3CFCD26F258ED37500D90AC3 /* AppDelegate.swift in Sources */,
 				3CFCD271258ED37500D90AC3 /* SceneDelegate.swift in Sources */,
+				3CFCD29A258EE10500D90AC3 /* RedditEntry.swift in Sources */,
 				3CFCD295258EDEDB00D90AC3 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
