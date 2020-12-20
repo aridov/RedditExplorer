@@ -10,6 +10,7 @@ import UIKit
 class HomeController: UIViewController {
     private static let cellIdentifier = "RedditCell"
     fileprivate var items = [ChildrenData]()
+    fileprivate var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,14 +20,29 @@ class HomeController: UIViewController {
         initViews()
         requestTopEntries()
     }
-
+    
     fileprivate func initViews() {
+        initTableView()
+        initRefreshControl()
+    }
+
+    fileprivate func initTableView() {
         tableView.register(UINib(nibName: HomeController.cellIdentifier, bundle: nil), forCellReuseIdentifier: HomeController.cellIdentifier)
         tableView.dataSource = self
         
         tableView.rowHeight = UITableView.automaticDimension
-        
         tableView.tableFooterView = UIView()
+    }
+    
+    fileprivate func initRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshEntries), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc fileprivate func refreshEntries() {
+        refreshControl.beginRefreshing()
+        requestTopEntries()
     }
     
     fileprivate func requestTopEntries() {
@@ -35,6 +51,7 @@ class HomeController: UIViewController {
                 switch result {
                     case .success(let items):
                         self?.items = items
+                        self?.refreshControl.endRefreshing()
                         self?.tableView.reloadData()
                     case .failure(let error):
                         print(error)
