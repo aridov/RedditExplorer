@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		3CFCD26F258ED37500D90AC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */; };
 		3CFCD271258ED37500D90AC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */; };
-		3CFCD273258ED37500D90AC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD272258ED37500D90AC3 /* ViewController.swift */; };
+		3CFCD273258ED37500D90AC3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD272258ED37500D90AC3 /* HomeController.swift */; };
 		3CFCD276258ED37500D90AC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD274258ED37500D90AC3 /* Main.storyboard */; };
 		3CFCD278258ED37600D90AC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD277258ED37600D90AC3 /* Assets.xcassets */; };
-		3CFCD27B258ED37600D90AC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD279258ED37600D90AC3 /* LaunchScreen.storyboard */; };
+		3CFCD286258ED43900D90AC3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD285258ED43900D90AC3 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CFCD26B258ED37500D90AC3 /* Reddit Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3CFCD272258ED37500D90AC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3CFCD272258ED37500D90AC3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3CFCD275258ED37500D90AC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CFCD277258ED37600D90AC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3CFCD27A258ED37600D90AC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CFCD27C258ED37600D90AC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CFCD285258ED43900D90AC3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,39 @@
 		3CFCD26D258ED37500D90AC3 /* Reddit Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */,
-				3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */,
-				3CFCD272258ED37500D90AC3 /* ViewController.swift */,
+				3CFCD288258ED44E00D90AC3 /* App */,
+				3CFCD284258ED42500D90AC3 /* LaunchScreen */,
+				3CFCD28A258EDA0100D90AC3 /* HomeScreen */,
 				3CFCD274258ED37500D90AC3 /* Main.storyboard */,
 				3CFCD277258ED37600D90AC3 /* Assets.xcassets */,
-				3CFCD279258ED37600D90AC3 /* LaunchScreen.storyboard */,
 				3CFCD27C258ED37600D90AC3 /* Info.plist */,
 			);
 			path = "Reddit Explorer";
+			sourceTree = "<group>";
+		};
+		3CFCD284258ED42500D90AC3 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCD285258ED43900D90AC3 /* Launch Screen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		3CFCD288258ED44E00D90AC3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */,
+				3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3CFCD28A258EDA0100D90AC3 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3CFCD272258ED37500D90AC3 /* HomeController.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFCD27B258ED37600D90AC3 /* LaunchScreen.storyboard in Resources */,
+				3CFCD286258ED43900D90AC3 /* Launch Screen.storyboard in Resources */,
 				3CFCD278258ED37600D90AC3 /* Assets.xcassets in Resources */,
 				3CFCD276258ED37500D90AC3 /* Main.storyboard in Resources */,
 			);
@@ -137,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFCD273258ED37500D90AC3 /* ViewController.swift in Sources */,
+				3CFCD273258ED37500D90AC3 /* HomeController.swift in Sources */,
 				3CFCD26F258ED37500D90AC3 /* AppDelegate.swift in Sources */,
 				3CFCD271258ED37500D90AC3 /* SceneDelegate.swift in Sources */,
 			);
@@ -152,14 +176,6 @@
 				3CFCD275258ED37500D90AC3 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3CFCD279258ED37600D90AC3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3CFCD27A258ED37600D90AC3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
