@@ -51,11 +51,12 @@ class HomeController: UIViewController {
                 switch result {
                     case .success(let items):
                         self?.items = items
-                        self?.refreshControl.endRefreshing()
                         self?.tableView.reloadData()
                     case .failure(let error):
                         print(error)
                 }
+                
+                self?.refreshControl.endRefreshing()
             }
         }
     }

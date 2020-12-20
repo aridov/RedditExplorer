@@ -14,6 +14,9 @@ class RedditCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailHeighConstraint: NSLayoutConstraint!
+    
+    let defaultImageHeight = 200.0
     
     func setRedditEntry(_ redditEntry: RedditEntry) {
         authorLabel.text = redditEntry.author
@@ -21,6 +24,7 @@ class RedditCell: UITableViewCell {
         commentsLabel.text = String(redditEntry.num_comments)
         
         updateEntryDate(with: redditEntry)
+        updateThumbnail(with: redditEntry)
     }
     
     override func prepareForReuse() {
@@ -38,5 +42,19 @@ class RedditCell: UITableViewCell {
         let hoursAgo = Int(timeDifference) / secondsInHour
         
         entryDateLabel.text = "\(hoursAgo) hours ago"
+    }
+    
+    fileprivate func updateThumbnail(with redditEntry: RedditEntry) {
+        let thumbnailUrl = URL(string: redditEntry.thumbnail)
+        guard let url = thumbnailUrl else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let contentsOfUrl = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                if let imageData = contentsOfUrl, let image = UIImage(data: imageData) {
+                    self.thumbnailImageView.image = image
+                }
+            }
+        }
     }
 }
