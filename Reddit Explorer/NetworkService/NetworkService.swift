@@ -34,7 +34,7 @@ class NetworkService {
     
     func loadNextPage(completion: @escaping TopRequestResult) {
         guard let url = URL(string: "\(RedditURL.top.rawValue)&after=\(nextPageId)") else { return }
-
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
             

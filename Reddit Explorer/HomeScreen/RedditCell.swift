@@ -14,6 +14,7 @@ class RedditCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailHeightConstraint: NSLayoutConstraint!
     
     var redditEntry: RedditEntry?
     var didTapThumbnail: ((RedditEntry) -> Void)?
@@ -53,7 +54,12 @@ class RedditCell: UITableViewCell {
     fileprivate func updateThumbnail() {
         guard let entry = redditEntry else { return }
         
-        thumbnailImageView.downloadImage(from: entry.thumbnail)
+        if (entry.thumbnail.hasPrefix("http")) {
+            thumbnailImageView.downloadImage(from: entry.thumbnail)
+            thumbnailHeightConstraint.constant = 200
+        } else {
+            thumbnailHeightConstraint.constant = 1
+        }
     }
     
     @IBAction func thumbnailAction(_ sender: Any) {

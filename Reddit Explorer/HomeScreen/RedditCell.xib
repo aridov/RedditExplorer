@@ -116,6 +116,7 @@
                 <outlet property="authorLabel" destination="UIq-5P-CWL" id="m7E-U6-mEP"/>
                 <outlet property="commentsLabel" destination="fhM-iO-BjE" id="OLE-Cj-Feo"/>
                 <outlet property="entryDateLabel" destination="vxG-WB-A17" id="ILz-9v-TeO"/>
+                <outlet property="thumbnailHeightConstraint" destination="2lX-op-2U3" id="OEq-bS-gQz"/>
                 <outlet property="thumbnailImageView" destination="K2N-Y4-Swo" id="nhY-M1-J3I"/>
                 <outlet property="titleLabel" destination="yp9-0L-sX1" id="K1l-Xb-RDR"/>
             </connections>

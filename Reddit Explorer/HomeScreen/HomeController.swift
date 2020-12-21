@@ -108,7 +108,7 @@ extension HomeController: UITableViewDelegate {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
-        if maximumOffset - currentOffset <= 50.0 {
+        if maximumOffset - currentOffset <= 10.0 {
             loadNextPage()
         }
     }
