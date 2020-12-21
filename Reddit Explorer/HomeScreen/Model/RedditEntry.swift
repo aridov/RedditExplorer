@@ -13,6 +13,7 @@ struct ResponseTopReddit : Codable {
 
 struct ResponseData: Codable {
     let children: [ChildrenData]
+    let after: String
 }
 
 struct ChildrenData: Codable {

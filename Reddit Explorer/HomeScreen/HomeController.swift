@@ -10,8 +10,11 @@ import UIKit
 class HomeController: UIViewController {
     
     private static let cellIdentifier = "RedditCell"
-    fileprivate var items = [ChildrenData]()
+    
     fileprivate var refreshControl = UIRefreshControl()
+    
+    fileprivate var items = [ChildrenData]()
+    fileprivate let networkService = NetworkService()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -47,7 +50,7 @@ class HomeController: UIViewController {
     }
     
     fileprivate func requestTopEntries() {
-        NetworkService().requestTopEntries {[weak self] result in
+        networkService.requestTopEntries {[weak self] result in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let items):
@@ -58,6 +61,20 @@ class HomeController: UIViewController {
                 }
                 
                 self?.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    fileprivate func loadNextPage() {
+        networkService.loadNextPage { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let items):
+                        self?.items.append(contentsOf: items)
+                        self?.tableView.reloadData()
+                    case .failure(let error):
+                        print(error)
+                }
             }
         }
     }
@@ -83,5 +100,16 @@ extension HomeController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension HomeController: UITableViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        if maximumOffset - currentOffset <= 50.0 {
+            loadNextPage()
+        }
     }
 }
