@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeController: UIViewController {
+    
     private static let cellIdentifier = "RedditCell"
     fileprivate var items = [ChildrenData]()
     fileprivate var refreshControl = UIRefreshControl()
@@ -60,6 +61,11 @@ class HomeController: UIViewController {
             }
         }
     }
+    
+    fileprivate func showFullImage(for entry: RedditEntry) {
+        let imageController = ImageController(with: entry)
+        present(imageController, animated: true, completion: nil)
+    }
 }
 
 extension HomeController: UITableViewDataSource {
@@ -72,6 +78,9 @@ extension HomeController: UITableViewDataSource {
         let redditEntry = items[indexPath.row].data
         
         cell.setRedditEntry(redditEntry)
+        cell.didTapThumbnail = { [weak self] entry in
+            self?.showFullImage(for: entry)
+        }
         
         return cell
     }

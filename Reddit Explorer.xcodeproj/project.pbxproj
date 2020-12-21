@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C33FECA25901CF000803D59 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33FEC825901CF000803D59 /* ImageController.swift */; };
+		3C33FECB25901CF000803D59 /* ImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C33FEC925901CF000803D59 /* ImageController.xib */; };
+		3C33FED02590202600803D59 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33FECF2590202600803D59 /* ImageViewExtension.swift */; };
 		3CFCD26F258ED37500D90AC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */; };
 		3CFCD271258ED37500D90AC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */; };
 		3CFCD278258ED37600D90AC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCD277258ED37600D90AC3 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C33FEC825901CF000803D59 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		3C33FEC925901CF000803D59 /* ImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageController.xib; sourceTree = "<group>"; };
+		3C33FECF2590202600803D59 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		3CFCD26B258ED37500D90AC3 /* Reddit Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFCD26E258ED37500D90AC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CFCD270258ED37500D90AC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +51,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C33FEC725901C9300803D59 /* ImageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3C33FEC825901CF000803D59 /* ImageController.swift */,
+				3C33FEC925901CF000803D59 /* ImageController.xib */,
+			);
+			path = ImageScreen;
+			sourceTree = "<group>";
+		};
+		3C33FECE25901FF000803D59 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3C33FECF2590202600803D59 /* ImageViewExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3CFCD262258ED37500D90AC3 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +90,9 @@
 				3CFCD288258ED44E00D90AC3 /* App */,
 				3CFCD284258ED42500D90AC3 /* LaunchScreen */,
 				3CFCD28A258EDA0100D90AC3 /* HomeScreen */,
+				3C33FEC725901C9300803D59 /* ImageScreen */,
 				3CFCD29D258EEFB700D90AC3 /* NetworkService */,
+				3C33FECE25901FF000803D59 /* Helpers */,
 				3CFCD277258ED37600D90AC3 /* Assets.xcassets */,
 				3CFCD27C258ED37600D90AC3 /* Info.plist */,
 			);
@@ -178,6 +203,7 @@
 			files = (
 				3CFCD286258ED43900D90AC3 /* Launch Screen.storyboard in Resources */,
 				3CFCD296258EDEDB00D90AC3 /* HomeController.xib in Resources */,
+				3C33FECB25901CF000803D59 /* ImageController.xib in Resources */,
 				3CFCD278258ED37600D90AC3 /* Assets.xcassets in Resources */,
 				3CFCD2A4258EFA8400D90AC3 /* RedditCell.xib in Resources */,
 			);
@@ -190,11 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C33FECA25901CF000803D59 /* ImageController.swift in Sources */,
 				3CFCD29F258EF01000D90AC3 /* NetworkService.swift in Sources */,
 				3CFCD2A3258EFA8400D90AC3 /* RedditCell.swift in Sources */,
 				3CFCD26F258ED37500D90AC3 /* AppDelegate.swift in Sources */,
 				3CFCD271258ED37500D90AC3 /* SceneDelegate.swift in Sources */,
 				3CFCD29A258EE10500D90AC3 /* RedditEntry.swift in Sources */,
+				3C33FED02590202600803D59 /* ImageViewExtension.swift in Sources */,
 				3CFCD295258EDEDB00D90AC3 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

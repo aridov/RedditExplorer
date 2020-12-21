@@ -81,17 +81,27 @@
                             <constraint firstItem="fhM-iO-BjE" firstAttribute="centerY" secondItem="dtO-Gw-Loi" secondAttribute="centerY" id="xZu-tC-949"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-ml-VNF">
+                        <rect key="frame" x="0.0" y="81" width="511" height="200"/>
+                        <connections>
+                            <action selector="thumbnailAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gjs-yr-JK4"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Lie-ml-VNF" firstAttribute="height" secondItem="K2N-Y4-Swo" secondAttribute="height" id="6SV-09-He5"/>
                     <constraint firstAttribute="bottom" secondItem="dtO-Gw-Loi" secondAttribute="bottom" id="7h0-vG-smv"/>
                     <constraint firstItem="dtO-Gw-Loi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DSY-no-wlL"/>
                     <constraint firstItem="vRX-4X-qiL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="EDh-Kf-HoC"/>
+                    <constraint firstItem="Lie-ml-VNF" firstAttribute="centerY" secondItem="K2N-Y4-Swo" secondAttribute="centerY" id="FTN-0M-Vz1"/>
                     <constraint firstItem="K2N-Y4-Swo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HxW-ei-P9g"/>
+                    <constraint firstItem="K2N-Y4-Swo" firstAttribute="trailing" secondItem="Lie-ml-VNF" secondAttribute="trailing" id="NJX-6a-JeY"/>
                     <constraint firstAttribute="trailing" secondItem="dtO-Gw-Loi" secondAttribute="trailing" id="Vxi-GD-nIE"/>
                     <constraint firstAttribute="trailing" secondItem="K2N-Y4-Swo" secondAttribute="trailing" id="bf1-15-kf0"/>
                     <constraint firstAttribute="trailing" secondItem="yp9-0L-sX1" secondAttribute="trailing" constant="20" symbolic="YES" id="btk-2G-sfF"/>
                     <constraint firstItem="K2N-Y4-Swo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="d4x-KO-m1B"/>
                     <constraint firstItem="K2N-Y4-Swo" firstAttribute="top" secondItem="yp9-0L-sX1" secondAttribute="bottom" constant="15" id="dsZ-qU-2cB"/>
+                    <constraint firstItem="Lie-ml-VNF" firstAttribute="leading" secondItem="K2N-Y4-Swo" secondAttribute="leading" id="eJ3-Lk-vlK"/>
                     <constraint firstItem="vRX-4X-qiL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hTq-8E-A3t"/>
                     <constraint firstItem="yp9-0L-sX1" firstAttribute="top" secondItem="vRX-4X-qiL" secondAttribute="bottom" id="jmA-br-UJE"/>
                     <constraint firstItem="yp9-0L-sX1" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="m1E-Fb-tX7"/>
@@ -106,7 +116,6 @@
                 <outlet property="authorLabel" destination="UIq-5P-CWL" id="m7E-U6-mEP"/>
                 <outlet property="commentsLabel" destination="fhM-iO-BjE" id="OLE-Cj-Feo"/>
                 <outlet property="entryDateLabel" destination="vxG-WB-A17" id="ILz-9v-TeO"/>
-                <outlet property="thumbnailHeighConstraint" destination="2lX-op-2U3" id="byu-nK-72D"/>
                 <outlet property="thumbnailImageView" destination="K2N-Y4-Swo" id="nhY-M1-J3I"/>
                 <outlet property="titleLabel" destination="yp9-0L-sX1" id="K1l-Xb-RDR"/>
             </connections>

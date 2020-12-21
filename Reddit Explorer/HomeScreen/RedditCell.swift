@@ -14,20 +14,24 @@ class RedditCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var thumbnailHeighConstraint: NSLayoutConstraint!
     
-    let defaultImageHeight = 200.0
+    var redditEntry: RedditEntry?
+    var didTapThumbnail: ((RedditEntry) -> Void)?
     
     func setRedditEntry(_ redditEntry: RedditEntry) {
+        self.redditEntry = redditEntry
+        
         authorLabel.text = redditEntry.author
         titleLabel.text = redditEntry.title
         commentsLabel.text = String(redditEntry.num_comments)
         
-        updateEntryDate(with: redditEntry)
-        updateThumbnail(with: redditEntry)
+        updateEntryDate()
+        updateThumbnail()
     }
     
     override func prepareForReuse() {
+        redditEntry = nil
+        
         authorLabel.text = nil
         entryDateLabel.text = nil
         titleLabel.text = nil
@@ -35,26 +39,26 @@ class RedditCell: UITableViewCell {
         thumbnailImageView.image = nil
     }
     
-    fileprivate func updateEntryDate(with redditEntry: RedditEntry) {
+    fileprivate func updateEntryDate() {
+        guard let entry = redditEntry else { return }
+        
         let currentTime = Date().timeIntervalSince1970
-        let timeDifference = currentTime - redditEntry.created_utc
+        let timeDifference = currentTime - entry.created_utc
         let secondsInHour = 3600
         let hoursAgo = Int(timeDifference) / secondsInHour
         
         entryDateLabel.text = "\(hoursAgo) hours ago"
     }
     
-    fileprivate func updateThumbnail(with redditEntry: RedditEntry) {
-        let thumbnailUrl = URL(string: redditEntry.thumbnail)
-        guard let url = thumbnailUrl else { return }
+    fileprivate func updateThumbnail() {
+        guard let entry = redditEntry else { return }
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let contentsOfUrl = try? Data(contentsOf: url)
-            DispatchQueue.main.async {
-                if let imageData = contentsOfUrl, let image = UIImage(data: imageData) {
-                    self.thumbnailImageView.image = image
-                }
-            }
-        }
+        thumbnailImageView.downloadImage(from: entry.thumbnail)
+    }
+    
+    @IBAction func thumbnailAction(_ sender: Any) {
+        guard let entry = redditEntry else { return }
+        
+        didTapThumbnail?(entry)
     }
 }
