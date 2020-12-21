@@ -23,6 +23,8 @@ struct RedditEntry: Codable {
     let author: String
     let title: String
     let thumbnail: String
+    let url_overridden_by_dest: String
+    let post_hint: String
     let num_comments: Int
     let created_utc: TimeInterval
 }

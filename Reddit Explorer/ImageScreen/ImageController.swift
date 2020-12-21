@@ -35,7 +35,7 @@ class ImageController: UIViewController {
     }
     
     fileprivate func initViews() {
-        imageView.downloadImage(from: redditEntry.thumbnail)
+        imageView.downloadImage(from: redditEntry.url_overridden_by_dest)
     }
     
     fileprivate func initGestures() {

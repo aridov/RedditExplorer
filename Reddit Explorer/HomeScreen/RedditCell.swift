@@ -58,7 +58,8 @@ class RedditCell: UITableViewCell {
     
     @IBAction func thumbnailAction(_ sender: Any) {
         guard let entry = redditEntry else { return }
-        
-        didTapThumbnail?(entry)
+        if (entry.url_overridden_by_dest.count > 0 && entry.post_hint == "image") {
+            didTapThumbnail?(entry)
+        }
     }
 }
